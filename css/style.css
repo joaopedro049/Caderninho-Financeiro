@@ -1,0 +1,1444 @@
+/* ===============================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #f3f5f7;
+    --branco: #ffffff;
+
+    --texto: #18201c;
+    --texto-secundario: #7a817d;
+
+    --verde: #15845a;
+    --verde-escuro: #0f6846;
+    --verde-claro: #e9f7f0;
+
+    --azul: #3976d9;
+    --azul-claro: #edf3ff;
+
+    --vermelho: #d84a4a;
+    --vermelho-claro: #fff0f0;
+
+    --borda: #e6e9e7;
+
+    --sombra: 0 8px 30px rgba(23, 35, 29, 0.07);
+}
+
+body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eef5f1 0px,
+            var(--fundo) 260px
+        );
+
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ===============================
+   APLICAÇÃO
+================================ */
+
+.app {
+    width: 100%;
+    max-width: 560px;
+
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+}
+
+
+/* ===============================
+   TOPO
+================================ */
+
+.topo {
+    margin-bottom: 28px;
+}
+
+.topo p {
+    color: var(--verde);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 6px;
+}
+
+.topo h1 {
+    font-size: 30px;
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+    line-height: 1.1;
+}
+
+
+/* ===============================
+   CARD DO SALDO
+================================ */
+
+.saldo-card {
+    background: var(--branco);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+
+    padding: 26px;
+
+    margin-bottom: 32px;
+
+    box-shadow: var(--sombra);
+}
+
+.saldo-card > p {
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* ===============================
+   NAVEGAÇÃO DO MÊS
+================================ */
+
+.navegacao-mes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 18px;
+    margin-bottom: 8px;
+
+    background: var(--fundo);
+
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+
+    padding: 6px;
+}
+
+.navegacao-mes p {
+    flex: 1;
+
+    text-align: center;
+
+    color: var(--texto);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.navegacao-mes button {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--branco);
+    color: var(--texto);
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+}
+
+.navegacao-mes button:hover {
+    background: var(--verde-claro);
+}
+
+.navegacao-mes button:active {
+    transform: scale(0.93);
+}
+
+
+/* ===============================
+   VALOR DO SALDO
+================================ */
+
+.saldo-card > h2 {
+    font-size: 38px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+
+/* ===============================
+   RESUMO DE ENTRADAS E SAÍDAS
+================================ */
+
+.resumo {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.resumo div {
+    min-width: 0;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.resumo div:first-child {
+    background: var(--verde-claro);
+}
+
+.resumo div:last-child {
+    background: var(--vermelho-claro);
+}
+
+.resumo span {
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+.resumo strong {
+    font-size: 16px;
+}
+
+.resumo div:first-child strong {
+    color: var(--verde);
+}
+
+.resumo div:last-child strong {
+    color: var(--vermelho);
+}
+
+
+/* ===============================
+   AÇÕES
+================================ */
+
+.acoes {
+    margin-bottom: 36px;
+}
+
+.acoes h2,
+.movimentacoes h2 {
+    font-size: 18px;
+    font-weight: 750;
+
+    margin-bottom: 16px;
+
+    letter-spacing: -0.3px;
+}
+
+.acao {
+    width: 100%;
+
+    min-height: 62px;
+
+    border: 1px solid transparent;
+    border-radius: 16px;
+
+    margin-bottom: 11px;
+
+    padding: 16px 18px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        filter 0.15s ease;
+}
+
+.acao:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+    filter: brightness(0.99);
+}
+
+.acao:active {
+    transform: scale(0.98);
+}
+
+.entrada {
+    background: var(--verde-claro);
+
+    border-color: rgba(21, 132, 90, 0.08);
+
+    color: var(--verde);
+}
+
+.venda {
+    background: var(--azul-claro);
+
+    border-color: rgba(57, 118, 217, 0.08);
+
+    color: var(--azul);
+}
+
+.gasto {
+    background: var(--vermelho-claro);
+
+    border-color: rgba(216, 74, 74, 0.08);
+
+    color: var(--vermelho);
+}
+
+
+/* ===============================
+   MOVIMENTAÇÕES
+================================ */
+
+.movimentacoes {
+    background: var(--branco);
+
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 22px;
+
+    padding: 22px;
+
+    box-shadow: var(--sombra);
+}
+
+.titulo-secao {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lista-vazia {
+    min-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+}
+
+
+/* ===============================
+   ITEM DO HISTÓRICO
+================================ */
+
+.movimentacao-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.movimentacao-item:last-child {
+    border-bottom: none;
+}
+
+.movimentacao-item > div:first-child {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.movimentacao-item > div:first-child strong {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.movimentacao-item span {
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+}
+
+.data-movimentacao {
+    color: var(--texto-secundario);
+
+    font-size: 11px;
+
+    margin-top: 2px;
+}
+
+
+/* ===============================
+   VALORES DO HISTÓRICO
+================================ */
+
+.valor-entrada {
+    color: var(--verde);
+
+    white-space: nowrap;
+}
+
+.valor-saida {
+    color: var(--vermelho);
+
+    white-space: nowrap;
+}
+
+
+/* ===============================
+   AÇÕES DA MOVIMENTAÇÃO
+================================ */
+
+.movimentacao-acoes {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 7px;
+}
+
+.btn-excluir {
+    border: none;
+
+    background: transparent;
+
+    color: var(--vermelho);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    padding: 4px 0;
+}
+
+.btn-excluir:hover {
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   MODAIS
+================================ */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(16, 24, 20, 0.55);
+
+    backdrop-filter: blur(4px);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal.ativo {
+    display: flex;
+}
+
+.modal-conteudo {
+    width: 100%;
+    max-width: 480px;
+
+    max-height: calc(100vh - 40px);
+
+    overflow-y: auto;
+
+    background: var(--branco);
+
+    border-radius: 24px;
+
+    padding: 26px;
+
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ===============================
+   TOPO DO MODAL
+================================ */
+
+.modal-topo {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 26px;
+}
+
+.modal-topo p {
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-bottom: 5px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+.modal-topo h2 {
+    font-size: 22px;
+
+    letter-spacing: -0.4px;
+}
+
+.fechar-modal {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--fundo);
+    color: var(--texto);
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.fechar-modal:hover {
+    background: var(--borda);
+}
+
+.fechar-modal:active {
+    transform: scale(0.92);
+}
+
+
+/* ===============================
+   FORMULÁRIOS
+================================ */
+
+#form-entrada,
+#form-saida,
+#form-venda {
+    display: flex;
+
+    flex-direction: column;
+}
+
+#form-entrada label,
+#form-saida label,
+#form-venda label {
+    font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+#form-entrada input,
+#form-entrada select,
+#form-saida input,
+#form-saida select,
+#form-venda input {
+    width: 100%;
+
+    height: 54px;
+
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+
+    padding: 0 14px;
+
+    margin-bottom: 19px;
+
+    font-size: 15px;
+
+    color: var(--texto);
+
+    background: var(--branco);
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* ===============================
+   FOCO DOS CAMPOS
+================================ */
+
+#form-entrada input:focus,
+#form-entrada select:focus {
+    outline: none;
+
+    border-color: var(--verde);
+
+    box-shadow: 0 0 0 4px var(--verde-claro);
+}
+
+#form-saida input:focus,
+#form-saida select:focus {
+    outline: none;
+
+    border-color: var(--vermelho);
+
+    box-shadow: 0 0 0 4px var(--vermelho-claro);
+}
+
+#form-venda input:focus {
+    outline: none;
+
+    border-color: var(--azul);
+
+    box-shadow: 0 0 0 4px var(--azul-claro);
+}
+
+
+/* ===============================
+   BOTÕES DE SALVAR
+================================ */
+
+.btn-salvar {
+    min-height: 56px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: var(--verde);
+    color: var(--branco);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        filter 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.btn-salvar:hover {
+    filter: brightness(0.95);
+
+    box-shadow: 0 8px 20px rgba(21, 132, 90, 0.15);
+}
+
+.btn-salvar:active {
+    transform: scale(0.98);
+}
+
+.btn-salvar-saida {
+    background: var(--vermelho);
+}
+
+#form-venda .btn-salvar {
+    background: var(--azul);
+}
+
+
+/* ===============================
+   SALDO NEGATIVO
+================================ */
+
+.saldo-negativo,
+#saldo.saldo-negativo {
+    color: var(--vermelho);
+}
+
+
+/* ===============================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 480px) {
+
+    .app {
+        padding: 24px 15px 45px;
+    }
+
+    .topo {
+        margin-bottom: 24px;
+    }
+
+    .topo h1 {
+        font-size: 27px;
+    }
+
+    .saldo-card {
+        padding: 20px;
+
+        border-radius: 20px;
+    }
+
+    .saldo-card > h2 {
+        font-size: 34px;
+    }
+
+    .navegacao-mes {
+        margin-top: 15px;
+    }
+
+    .navegacao-mes p {
+        font-size: 13px;
+    }
+
+    .resumo {
+        gap: 9px;
+    }
+
+    .resumo div {
+        padding: 14px 12px;
+    }
+
+    .resumo strong {
+        font-size: 14px;
+    }
+
+    .acao {
+        min-height: 62px;
+
+        font-size: 15px;
+    }
+
+    .movimentacoes {
+        padding: 18px;
+    }
+
+    .movimentacao-item {
+        gap: 10px;
+    }
+
+    .modal {
+        padding: 14px;
+    }
+
+    .modal-conteudo {
+        padding: 22px 18px;
+
+        border-radius: 20px;
+
+        max-height: calc(100vh - 28px);
+    }
+}
+
+
+/* ===============================
+   TELAS MUITO PEQUENAS
+================================ */
+
+@media (max-width: 360px) {
+
+    .saldo-card > h2 {
+        font-size: 30px;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+
+    .navegacao-mes button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .movimentacao-item {
+        align-items: flex-start;
+    }
+}
+/* ===============================
+   NOVO CARD PRINCIPAL
+================================ */
+
+.saldo-card {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #126b4a 0%,
+            #168c5b 55%,
+            #1b9c68 100%
+        );
+
+    border: none;
+    border-radius: 26px;
+
+    padding: 28px;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 18px 45px rgba(18, 107, 74, 0.22);
+}
+
+
+/* detalhe decorativo */
+
+.saldo-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    right: -70px;
+    top: -90px;
+
+    pointer-events: none;
+}
+
+
+/* SALDO ATUAL */
+
+.saldo-card > p {
+    position: relative;
+    z-index: 1;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+
+/* VALOR PRINCIPAL */
+
+.saldo-card > h2 {
+    position: relative;
+    z-index: 1;
+
+    color: #ffffff;
+
+    font-size: 40px;
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    margin-top: 18px;
+    margin-bottom: 25px;
+}
+
+
+/* ===============================
+   MÊS
+================================ */
+
+.navegacao-mes {
+    position: relative;
+    z-index: 1;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    margin-top: 17px;
+
+    padding: 5px;
+
+    backdrop-filter: blur(8px);
+}
+
+.navegacao-mes p {
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+.navegacao-mes button {
+    background: rgba(255, 255, 255, 0.14);
+
+    color: #ffffff;
+
+    box-shadow: none;
+}
+
+.navegacao-mes button:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+
+/* ===============================
+   ENTRADAS E SAÍDAS NO CARD
+================================ */
+
+.resumo {
+    position: relative;
+    z-index: 1;
+}
+
+.resumo div {
+    background: rgba(255, 255, 255, 0.11) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(5px);
+}
+
+.resumo span {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.resumo div:first-child strong {
+    color: #bff5d8;
+}
+
+.resumo div:last-child strong {
+    color: #ffd0d0;
+}
+
+
+/* ===============================
+   COR DO SALDO
+================================ */
+
+#saldo {
+    color: #ffffff;
+}
+
+/* Quando o JavaScript detectar saldo negativo */
+#saldo[style*="rgb(216, 74, 74)"],
+#saldo[style*="#d84a4a"] {
+    color: #ffb4b4 !important;
+}
+#saldo {
+    color: #ffffff;
+}
+
+#saldo.saldo-negativo {
+    color: #ffb4b4 !important;
+}   
+/* ===============================
+   CORREÇÃO DE CONTRASTE DO CARD
+================================ */
+
+/* Saldo normal */
+#saldo {
+    color: #ffffff;
+}
+
+/* Saldo negativo */
+#saldo.saldo-negativo {
+    color: #ff5c5c !important;
+}
+
+/* Caixas Entrou e Saiu */
+.resumo div {
+    background: rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* Títulos */
+.resumo span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Valor que entrou */
+.resumo div:first-child strong {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+/* Valor que saiu */
+.resumo div:last-child strong {
+    color: #ff6b6b;
+    font-weight: 800;
+}
+/* ===============================
+   CORREÇÃO DE CONTRASTE DO CARD
+================================ */
+
+#saldo {
+    color: #ffffff;
+}
+
+#saldo.saldo-negativo {
+    color: #ff5c5c !important;
+}
+
+.resumo div {
+    background: rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.resumo span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.resumo div:first-child strong {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.resumo div:last-child strong {
+    color: #ff6b6b;
+    font-weight: 800;
+}
+/* ===============================
+   NOVOS CARDS DE AÇÃO
+================================ */
+
+.acao {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-height: 76px;
+    padding: 13px 16px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--borda);
+    border-radius: 17px;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.035);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.acao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ÍCONE */
+
+.acao-icone {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 21px;
+    font-weight: 800;
+}
+
+
+/* TEXTO */
+
+.acao-texto {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    text-align: left;
+}
+
+.acao-texto strong {
+    color: var(--texto);
+
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.acao-texto small {
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* SETA */
+
+.acao-seta {
+    color: #a4aaa7;
+
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+/* ENTRADA */
+
+.entrada {
+    background: #ffffff;
+    color: var(--texto);
+}
+
+.entrada .acao-icone {
+    background: var(--verde-claro);
+    color: var(--verde);
+}
+
+
+/* VENDA */
+
+.venda {
+    background: #ffffff;
+    color: var(--texto);
+}
+
+.venda .acao-icone {
+    background: var(--azul-claro);
+    color: var(--azul);
+}
+
+
+/* SAÍDA */
+
+.gasto {
+    background: #ffffff;
+    color: var(--texto);
+}
+
+.gasto .acao-icone {
+    background: var(--vermelho-claro);
+    color: var(--vermelho);
+}
+/* ===============================
+   HISTÓRICO - VISUAL NOVO
+================================ */
+
+.movimentacoes {
+    padding: 24px;
+}
+
+.movimentacoes h2 {
+    margin-bottom: 6px;
+}
+
+.titulo-secao {
+    margin-bottom: 12px;
+}
+
+
+/* CADA MOVIMENTAÇÃO */
+
+.movimentacao-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #edf0ee;
+}
+
+.movimentacao-item:last-child {
+    border-bottom: none;
+}
+
+
+/* LADO ESQUERDO */
+
+.movimentacao-item > div:first-child {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.movimentacao-item > div:first-child strong {
+    color: var(--texto);
+
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.movimentacao-item span {
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+}
+
+.data-movimentacao {
+    color: #a0a6a2;
+
+    font-size: 11px;
+
+    margin-top: 3px;
+}
+
+
+/* LADO DO VALOR */
+
+.movimentacao-acoes {
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 6px;
+}
+
+.movimentacao-acoes > strong {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* ENTRADA */
+
+.movimentacao-acoes .valor-entrada {
+    color: #16845a;
+}
+
+
+/* SAÍDA */
+
+.movimentacao-acoes .valor-saida {
+    color: #c93f3f;
+}
+
+
+/* EXCLUIR */
+
+.btn-excluir {
+    border: none;
+
+    background: transparent;
+
+    color: #9a9f9c;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    padding: 3px 0;
+
+    transition: color 0.15s ease;
+}
+
+.btn-excluir:hover {
+    color: #d84a4a;
+    text-decoration: none;
+}
+
+
+/* QUANDO NÃO EXISTIR MOVIMENTAÇÃO */
+
+.lista-vazia {
+    min-height: 130px;
+
+    border: 1px dashed #dfe4e1;
+    border-radius: 14px;
+
+    background: #fafbfa;
+
+    padding: 20px;
+}
+/* ===============================
+   MODAIS - ACABAMENTO FINAL
+================================ */
+
+.modal {
+    background: rgba(12, 20, 16, 0.62);
+    backdrop-filter: blur(6px);
+}
+
+.modal-conteudo {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.22);
+
+    animation: abrirModal 0.22s ease;
+}
+
+
+/* ANIMAÇÃO */
+
+@keyframes abrirModal {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* CABEÇALHO */
+
+.modal-topo {
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.modal-topo h2 {
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.modal-topo p {
+    color: var(--verde);
+}
+
+
+/* BOTÃO X */
+
+.fechar-modal {
+    background: #f3f5f4;
+
+    color: #606662;
+}
+
+.fechar-modal:hover {
+    background: #e8ebe9;
+}
+
+
+/* CAMPOS */
+
+#form-entrada input,
+#form-entrada select,
+#form-saida input,
+#form-saida select,
+#form-venda input {
+    background: #fafbfa;
+
+    border: 1px solid #dde2df;
+
+    font-size: 15px;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+#form-entrada input:hover,
+#form-entrada select:hover,
+#form-saida input:hover,
+#form-saida select:hover,
+#form-venda input:hover {
+    background: #ffffff;
+}
+
+
+/* LABELS */
+
+#form-entrada label,
+#form-saida label,
+#form-venda label {
+    color: #3d4541;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* BOTÕES */
+
+.btn-salvar {
+    margin-top: 4px;
+
+    box-shadow: 0 7px 18px rgba(21, 132, 90, 0.16);
+}
+
+.btn-salvar-saida {
+    box-shadow: 0 7px 18px rgba(216, 74, 74, 0.15);
+}
+
+#form-venda .btn-salvar {
+    box-shadow: 0 7px 18px rgba(57, 118, 217, 0.15);
+}

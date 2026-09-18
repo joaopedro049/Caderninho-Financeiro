@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Caderninho</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="topo">
+            <div>
+                <p>Olá 👋</p>
+                <h1>Meu Caderninho</h1>
+            </div>
+        </header>
+
+        <section class="saldo-card">
+            <p>Saldo atual</p>
+           <div class="navegacao-mes">
+
+    <button id="mes-anterior" type="button">
+        ‹
+    </button>
+
+    <p id="mes-atual">Mês atual</p>
+
+    <button id="proximo-mes" type="button">
+        ›
+    </button>
+
+</div>
+            <h2 id="saldo">R$ 0,00</h2>
+
+            <div class="resumo">
+                <div>
+                    <span>Entrou</span>
+                    <strong id="total-entradas">R$ 0,00</strong>
+                </div>
+
+                <div>
+                    <span>Saiu</span>
+                    <strong id="total-saidas">R$ 0,00</strong>
+                </div>
+            </div>
+        </section>
+
+<section class="acoes">
+
+    <h2>O que deseja registrar?</h2>
+
+    <button class="acao entrada" id="btn-entrada">
+
+        <span class="acao-icone">+</span>
+
+        <span class="acao-texto">
+            <strong>Dinheiro que entrou</strong>
+            <small>Salário, Pix ou outra entrada</small>
+        </span>
+
+        <span class="acao-seta">›</span>
+
+    </button>
+
+    <button class="acao venda" id="btn-venda">
+
+        <span class="acao-icone">$</span>
+
+        <span class="acao-texto">
+            <strong>Registrar venda</strong>
+            <small>Produto, quantidade e valor</small>
+        </span>
+
+        <span class="acao-seta">›</span>
+
+    </button>
+
+    <button class="acao gasto" id="btn-saida">
+
+        <span class="acao-icone">−</span>
+
+        <span class="acao-texto">
+            <strong>Dinheiro que saiu</strong>
+            <small>Contas, compras e outros gastos</small>
+        </span>
+
+        <span class="acao-seta">›</span>
+
+    </button>
+
+</section>
+
+        <section class="movimentacoes">
+            <div class="titulo-secao">
+                <h2>Movimentações recentes</h2>
+            </div>
+
+            <div id="lista-movimentacoes" class="lista-vazia">
+                <p>Nenhuma movimentação registrada.</p>
+            </div>
+        </section>
+
+    </main>
+<div class="modal" id="modal-entrada">
+
+    <div class="modal-conteudo">
+
+        <div class="modal-topo">
+            <div>
+                <p>Nova movimentação</p>
+                <h2>Dinheiro que entrou</h2>
+            </div>
+
+            <button type="button" class="fechar-modal" id="fechar-entrada">
+                ×
+            </button>
+        </div>
+
+        <form id="form-entrada">
+
+            <label for="tipo-entrada">De onde veio?</label>
+
+            <select id="tipo-entrada" required>
+                <option value="">Selecione</option>
+                <option value="Salário">Salário</option>
+                <option value="Pix recebido">Pix recebido</option>
+                <option value="Outro">Outro</option>
+            </select>
+
+            <label for="descricao-entrada">Descrição</label>
+
+            <input
+                type="text"
+                id="descricao-entrada"
+                placeholder="Ex: Salário de setembro"
+            >
+
+            <label for="valor-entrada">Valor recebido</label>
+
+            <input
+                type="number"
+                id="valor-entrada"
+                placeholder="R$ 0,00"
+                min="0.01"
+                step="0.01"
+                required
+            >
+
+            <button type="submit" class="btn-salvar">
+                Salvar entrada
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<div class="modal" id="modal-saida">
+
+    <div class="modal-conteudo">
+
+        <div class="modal-topo">
+            <div>
+                <p>Nova movimentação</p>
+                <h2>Dinheiro que saiu</h2>
+            </div>
+
+            <button type="button" class="fechar-modal" id="fechar-saida">
+                ×
+            </button>
+        </div>
+
+        <form id="form-saida">
+
+            <label for="tipo-saida">Gastou com o quê?</label>
+
+            <select id="tipo-saida" required>
+                <option value="">Selecione</option>
+                <option value="Mercado">Mercado</option>
+                <option value="Conta">Conta</option>
+                <option value="Compra para loja">Compra para loja</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Alimentação">Alimentação</option>
+                <option value="Outro">Outro</option>
+            </select>
+
+            <label for="descricao-saida">Descrição</label>
+
+            <input
+                type="text"
+                id="descricao-saida"
+                placeholder="Ex: Conta de luz"
+            >
+
+            <label for="valor-saida">Valor gasto</label>
+
+            <input
+                type="number"
+                id="valor-saida"
+                placeholder="R$ 0,00"
+                min="0.01"
+                step="0.01"
+                required
+            >
+
+            <button type="submit" class="btn-salvar btn-salvar-saida">
+                Salvar gasto
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<div class="modal" id="modal-venda">
+
+    <div class="modal-conteudo">
+
+        <div class="modal-topo">
+            <div>
+                <p>Nova movimentação</p>
+                <h2>Registrar venda</h2>
+            </div>
+
+            <button type="button" class="fechar-modal" id="fechar-venda">
+                ×
+            </button>
+        </div>
+
+        <form id="form-venda">
+
+            <label for="produto-venda">Nome do produto</label>
+
+            <input
+                type="text"
+                id="produto-venda"
+                placeholder="Ex: Camiseta"
+                required
+            >
+
+            <label for="quantidade-venda">Quantidade</label>
+
+            <input
+                type="number"
+                id="quantidade-venda"
+                value="1"
+                min="1"
+                required
+            >
+
+            <label for="valor-venda">Valor de cada unidade</label>
+
+            <input
+                type="number"
+                id="valor-venda"
+                placeholder="R$ 0,00"
+                min="0.01"
+                step="0.01"
+                required
+            >
+
+            <button type="submit" class="btn-salvar">
+                Salvar venda
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
